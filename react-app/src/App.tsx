@@ -1,24 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { WasmGreeting } from './types';
+import Components from './components';
 import './App.css';
 
-type WasmGreeting = {
-  default: any;
-  greetPerson(arg0: string): void;
-}
-
-interface Loaded {
- wasm: WasmGreeting
-}
-
-const Loaded = ({ wasm }: Loaded) => <button onClick={() => wasm.greetPerson('person\'s name')}>Click me</button>;
-
-interface Unloaded {
-  loading: boolean;
-}
-
-const Unloaded = ({ loading }: Unloaded) => {
- return loading ? <div>Loading...</div> : null
-};
+const { LoadedButton, UnloadedButton } = Components;
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -42,9 +27,9 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
         {wasm ? (
-          <Loaded wasm={wasm} />
+          <LoadedButton wasm={wasm} />
         ) : (
-          <Unloaded loading={loading} />
+          <UnloadedButton loading={loading} />
         )}
       </header>
     </div>
