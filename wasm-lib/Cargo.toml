@@ -1,0 +1,10 @@
+[package]
+name = "react-with-wasm"
+version = "0.0.1"
+authors = ["Vince Vella <vincevella0@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "=0.2.34"
