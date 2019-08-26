@@ -1,4 +1,3 @@
-import LoadedButton from './loaded-button';
-import UnloadedButton from './unloaded-button';
+import WasmButton from './wasm-button';
 
-export default {LoadedButton, UnloadedButton};
+export { WasmButton };

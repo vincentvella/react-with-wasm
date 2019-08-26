@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { WasmGreeting } from './types';
-import Components from './components';
+import Functions from './functions';
 import './App.css';
+import { WasmButton } from './components';
 
-const { LoadedButton, UnloadedButton } = Components;
+const { Alert } = Functions;
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [wasm, setWasm] = useState<WasmGreeting>();
-  useEffect(() => {
-    loadWASM();
-  }, []);
 
   async function loadWASM() {
     try {
@@ -22,14 +20,19 @@ const App: React.FC = () => {
     }
   }
 
+  useEffect(() => {
+    loadWASM();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        {wasm ? (
-          <LoadedButton wasm={wasm} />
-        ) : (
-          <UnloadedButton loading={loading} />
-        )}
+        <WasmButton<'greetPerson'>
+          wasm={wasm}
+          loading={loading}
+          handleClick={() => wasm.greetPerson("person's name")}
+        />
+        <button onClick={Alert}>Click Me</button>
       </header>
     </div>
   );
