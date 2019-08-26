@@ -8,6 +8,9 @@ const { LoadedButton, UnloadedButton } = Components;
 const App: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [wasm, setWasm] = useState<WasmGreeting>();
+  useEffect(() => {
+    loadWASM();
+  }, []);
 
   async function loadWASM() {
     try {
@@ -18,10 +21,6 @@ const App: React.FC = () => {
       setLoading(false);
     }
   }
-
-  useEffect(() => {
-    loadWASM();
-  }, [])
 
   return (
     <div className="App">
