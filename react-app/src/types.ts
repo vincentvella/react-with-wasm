@@ -1,6 +1,6 @@
-export type WasmGreeting = {
+export type WasmModule = {
   default: any;
-  greetPerson(arg0: string): void;
+  fibonacci(arg0: BigInt): BigInt;
 };
 
-export type WasmFunction<T extends keyof WasmGreeting> = WasmGreeting[T];
+export type WasmFunction<T extends keyof WasmModule> = WasmModule[T];

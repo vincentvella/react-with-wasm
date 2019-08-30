@@ -1,3 +1,4 @@
-import Alert from './alert';
+import Alert from "./alert";
+import Fibonacci from "./fibonacci";
 
-export default { Alert };
+export default { Alert, Fibonacci };
