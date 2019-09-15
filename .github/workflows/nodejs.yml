@@ -22,4 +22,4 @@ jobs:
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: react-app/build
-        BUILD_SCRIPT: cd react-app && npm install && npm run build
+        BUILD_SCRIPT: cd react-app && yarn install && yarn run build
