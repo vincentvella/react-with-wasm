@@ -36,14 +36,11 @@ jobs:
       run: |
         wasm-pack build
  
-    - name: Publish Github Pages
-      working-directory: ./react-app
-      run: |
-        git config --global user.email "vincevella0@gmail.com"
-        git config --global user.name "vincentvella"
-        git checkout --orphan gh-pages
-        yarn install
-        yarn run deploy
-        git add .
-        git commit -m "Deploying to ${BRANCH} - $(date +"%T")"
-        git push gh-pages --force
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: react-app/build
+        BUILD_SCRIPT: cd react-app && yarn install && yarn run-script build && cd ..
