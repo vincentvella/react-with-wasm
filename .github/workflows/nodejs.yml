@@ -40,6 +40,6 @@ jobs:
       working-directory: ./react-app
       run: |
         git config --global user.email "vincevella0@gmail.com"
-        git config --global user.name "Vince Vella"
+        git config --global user.name "vincentvella"
         yarn install
         yarn run deploy
