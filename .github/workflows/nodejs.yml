@@ -41,6 +41,9 @@ jobs:
       run: |
         git config --global user.email "vincevella0@gmail.com"
         git config --global user.name "vincentvella"
-        git remote add origin git@github.com:vincentvella/react-with-wasm.git
+        git checkout --orphan gh-pages
         yarn install
         yarn run deploy
+        git add .
+        git commit -m "Deploying to ${BRANCH} - $(date +"%T")"
+        git push gh-pages --force
