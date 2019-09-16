@@ -7,19 +7,41 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest    
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        rust: [stable]
+        rustup: [stable]
+        node_version: [10]
+        
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js $
+    - uses: hecrj/setup-rust-action@master
+      with:
+        rust-version: ${{ matrix.rust }}
+        
+    - name: Download WASM Pack
+      run: |
+        curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+        wasm-pack --version
+        
+    - name: Use Node.js version 10
       uses: actions/setup-node@v1
       with:
-        node-version: '10'
-    
+        version: ${{ matrix.node_version }}
+        
+    - name: Build WASM Module
+      working-directory: ./wasm-lib
+      run: |
+        wasm-pack --version
+        wasm-pack build
+ 
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BASE_BRANCH: master
         BRANCH: gh-pages
-        FOLDER: react-app/build
+        FOLDER: build
         BUILD_SCRIPT: cd react-app && yarn install && yarn run build
