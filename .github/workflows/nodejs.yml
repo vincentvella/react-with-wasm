@@ -34,7 +34,6 @@ jobs:
     - name: Build WASM Module
       working-directory: ./wasm-lib
       run: |
-        wasm-pack --version
         wasm-pack build
  
     - name: Build and Deploy
