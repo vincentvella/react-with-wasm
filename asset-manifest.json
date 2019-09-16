@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/react-with-wasm/static/css/main.dfdb6690.chunk.css",
+    "main.js": "/react-with-wasm/static/js/main.859f54ee.chunk.js",
+    "main.js.map": "/react-with-wasm/static/js/main.859f54ee.chunk.js.map",
+    "runtime~main.js": "/react-with-wasm/static/js/runtime~main.4b859705.js",
+    "runtime~main.js.map": "/react-with-wasm/static/js/runtime~main.4b859705.js.map",
+    "static/js/2.bbe64f19.chunk.js": "/react-with-wasm/static/js/2.bbe64f19.chunk.js",
+    "static/js/2.bbe64f19.chunk.js.map": "/react-with-wasm/static/js/2.bbe64f19.chunk.js.map",
+    "static/js/3.80857320.chunk.js": "/react-with-wasm/static/js/3.80857320.chunk.js",
+    "149d32c84698f4f13711.module.wasm": "/react-with-wasm/149d32c84698f4f13711.module.wasm",
+    "static/js/3.80857320.chunk.js.map": "/react-with-wasm/static/js/3.80857320.chunk.js.map",
+    "index.html": "/react-with-wasm/index.html",
+    "precache-manifest.ea64dd08c244b772a9b309beff7d7ec8.js": "/react-with-wasm/precache-manifest.ea64dd08c244b772a9b309beff7d7ec8.js",
+    "service-worker.js": "/react-with-wasm/service-worker.js",
+    "static/css/main.dfdb6690.chunk.css.map": "/react-with-wasm/static/css/main.dfdb6690.chunk.css.map"
+  }
+}

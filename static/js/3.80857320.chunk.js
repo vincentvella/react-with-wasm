@@ -1,0 +1,2 @@
+(window["webpackJsonpreact-app"]=window["webpackJsonpreact-app"]||[]).push([[3],{15:function(n,r,u){"use strict";var a=u.w[n.i];n.exports=a,a.d()},16:function(n,r,u){"use strict";u.r(r),u.d(r,"fibonacci",function(){return f});var a=u(15),e=new Uint32Array(2),i=new BigUint64Array(e.buffer);var t=null;var c=null;function f(n){i[0]=n;var r=e[0],u=e[1],f=(null===t&&(t=a.a()),t);return a.b(f,r,u),(null!==c&&c.buffer===a.c.buffer||(c=new BigUint64Array(a.c.buffer)),c)[f/8]}}}]);
+//# sourceMappingURL=3.80857320.chunk.js.map
