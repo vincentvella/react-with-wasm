@@ -36,11 +36,8 @@ jobs:
       run: |
         wasm-pack build
  
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: cd react-app && yarn install && yarn run build
+    - name: Publish Github Pages
+      working-directory: ./react-app
+      run: |
+        yarn install
+        yarn run deploy
