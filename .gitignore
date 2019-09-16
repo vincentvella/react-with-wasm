@@ -1,3 +1,4 @@
 wasm-lib/pkg
 wasm-lib/target
 react-app/node_modules
+react-app/build/
